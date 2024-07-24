@@ -1,0 +1,222 @@
+/* Estilos generales */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  /* padding: 20px;
+  box-sizing: border-box; */
+}
+
+.grid-container > * {
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template:
+    "header" 100vh
+    "main" auto
+    "sidebar" auto
+    "article" auto
+    "footer" 100px;
+  .header {
+    grid-area: header;
+  }
+  .main {
+    grid-area: main;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .article {
+    grid-area: article;
+  }
+  .footer {
+    grid-area: footer;
+  }
+
+  /* *************** *************** ***************
+  Cuando se excede el tamaño de pantallas de tablet hacía arriba.
+  *************** *************** *************** */
+  
+  @media (min-width: 768px) {
+    grid-template:
+      "header header" 100vh
+      "main sidebar" auto
+      "article article" auto
+      "footer footer" 100px /
+      auto 500px;
+
+    .main {
+      /* ARRIBA - DERECHA - ABAJO - IZQUIERDA */
+      padding: 50px 0 50px 50px;
+    }
+
+    .sidebar {
+      padding-top: 50px;
+      padding-right: 50px;
+    }
+
+    .img {
+      max-width: 20%;
+      height: auto;
+    }
+
+    table td {
+      width: 20px;
+    }
+
+    /* tamaño de las imagenes dentro de la tabla */
+    .img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    /* .tittle {
+        padding: 50px;
+    } */
+
+    /* .navigation{
+        padding: 50px;
+    } */
+  }
+}
+
+/* 
+***
+HTML HOME
+*** 
+*/
+
+.header {
+  background-image: url(/img/banner.jpg);
+  color: white;
+  background-position: center;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+}
+
+.navigation li a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: white;
+}
+
+.text-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.btnn {
+  background-color: black;
+  height: 50px;
+}
+
+.btn {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btnCursos {
+  font-size: 1.3rem;
+}
+
+.btnCursoss {
+  height: 80px;
+}
+
+.main img {
+  max-width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  display: block; /* Ocupa todo el ancho disponible */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.section2,
+.curso2 {
+  padding-top: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+.tittle {
+  padding: 20px;
+}
+
+.home {
+  text-decoration: none;
+  color: white;
+}
+
+/* 
+***
+HTML CURSOS
+*** 
+*/
+
+.article {
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-collapse: collapse;
+}
+
+/* ancho de las celdas de las tablas */
+table td {
+  width: 20px;
+}
+
+.headers {
+  background-color: rgb(73, 42, 42);
+  color: white;
+}
+
+/* tamaño de las imagenes dentro de la tabla */
+.img {
+  max-width: 50%;
+  height: auto;
+}
